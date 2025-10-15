@@ -16,4 +16,5 @@ func main() {
 	s2.Age=23
 	fmt.Println(s1,s2)
 
+
 }
