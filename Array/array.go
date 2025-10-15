@@ -16,7 +16,7 @@ func findMax() int {
 
 	return max
 
-
+}
 func main() {
 
 	fmt.Println(findMax())
