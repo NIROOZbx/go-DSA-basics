@@ -18,7 +18,7 @@ func main() {
 
 	 arr[index]=56
 
-	 arr=append(arr[:deleteIndex],arr[deleteIndex+1:]...)
+	 arr=append(arr[:deleteIndex],arr[deleteIndex+1:]...)//delete element
 
 
 	for i:=0;i<len(arr);i++{
