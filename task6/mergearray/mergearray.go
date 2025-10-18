@@ -1,23 +1,28 @@
 package main
-import "fmt"
 
-
-func merge(nums1 []int, m int, nums2 []int, n int)  {
+func merge(nums1 []int, m int, nums2 []int, n int) {
 
 	copy(nums1[m:], nums2[:n])
-	fmt.Println(nums1)
+	left := 0
+	right := 1
 
-	for i:=0;i<len(nums1);i++{
-		for j:=i+1;j<len(nums1);j++{
-			if nums1[j]<nums1[i]{
-				nums1[i],nums1[j]=nums1[j],nums1[i]
-			}
+	for left < len(nums1)-1 {
+
+		if nums1[left] > nums1[right] {
+			nums1[left], nums1[right] = nums1[right], nums1[left]
+
 		}
+		right++
+
+		if right > len(nums1)-1 {
+			left++
+			right = left
+		}
+
 	}
-	
-    
+
 }
 
-func main(){
- merge([]int{1,2,3,0,0,0}, 3, []int{2,5,6},3)
+func main() {
+	merge([]int{1, 2, 3, 0, 0, 0}, 3, []int{2, 5, 6}, 3)
 }
