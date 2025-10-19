@@ -18,8 +18,17 @@ func main() {
 
 		newNode := &Node{Data: arr[i]}
 		current.Next = newNode
-		fmt.Println(newNode.Data, newNode.Next)
+
+		current = newNode
 
 	}
+
+	iterator := head
+	for iterator != nil {
+
+		fmt.Println(iterator.Next)
+		iterator = iterator.Next
+	}
+
 
 }
