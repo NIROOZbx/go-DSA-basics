@@ -85,8 +85,7 @@ func main() {
 			break
 		}
 
-		if listLen == k {
-
+		if listLen == k { 
 			prev.Next = prev.Next.Next
 			break
 		}
@@ -95,7 +94,7 @@ func main() {
 
 	}
 
-	x:=3
+	x:=5
 	cn:=0
 
 	newCurrent:=newHead
