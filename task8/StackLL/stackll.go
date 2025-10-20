@@ -32,8 +32,13 @@ func main() {
 	st.Push(10)
 	st.Push(20)
 	st.Push(30)
+	st.Push(40)
+	st.Push(50)
+	st.Push(60)
 	st.Pop()
 
+
+	fmt.Println(st.top)
 	temp:=st.top
   for temp!=nil{
 

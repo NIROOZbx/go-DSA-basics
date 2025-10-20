@@ -24,14 +24,14 @@ func (q *Queue) Enqueue(val int) {
 }
 
 func (q *Queue) Dequeue() {
-	
+
 	if q.currentSize == 0 {
 		return 
 	}
 
 	q.Start=(q.Start+1)%len(q.items)
 	q.currentSize--
-	fmt.Println(q.Start)
+	
 }
 
 func (q *Queue) Peek() int {
