@@ -8,7 +8,7 @@ type Node struct {
 }
 
 type Stack struct {
-	top *Node
+	top  *Node
 	size int
 }
 
@@ -19,10 +19,13 @@ func (s *Stack) Push(val int) {
 }
 
 func (s *Stack) Pop() {
-	s.top=s.top.Next
+	s.top = s.top.Next
 	s.size--
 
+}
 
+func (s *Stack) Peek() int{
+	return s.top.Data
 }
 
 func main() {
@@ -37,19 +40,14 @@ func main() {
 	st.Push(60)
 	st.Pop()
 
-
 	fmt.Println(st.top)
-	temp:=st.top
-  for temp!=nil{
+	temp := st.top
+	for temp != nil {
 
-	fmt.Println(temp.Data)
-	temp=temp.Next
-  }
+		fmt.Println(temp.Data)
+		temp = temp.Next
+	}
 
-
-
-	
-
-	
+	fmt.Println("Top elemeent",st.Peek())
 
 }

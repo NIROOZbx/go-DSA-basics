@@ -25,7 +25,6 @@ func main() {
 
 	for current!=nil{
 		arr=append(arr, current.Data)
-		fmt.Println(current.Data,current.Next)
 		current=current.Next
 
 	}

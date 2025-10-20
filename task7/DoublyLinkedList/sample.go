@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 )
 
 type Node struct {
@@ -36,10 +35,10 @@ func main() {
 
 	head = DeleteK(head, 2)
 
-	head=insertBack(head,6)
+	head = insertBack(head, 6)
 
-	head=insertAtK(head, 7,7)
-	head=insertAtK(head, 6,5)
+	head = insertAtK(head, 7, 7)
+	head = insertAtK(head, 6, 5)
 
 	temp := head
 
@@ -58,21 +57,17 @@ func insertFront(val int, head *Node) *Node {
 
 	return newNode
 }
-func insertBack(head *Node ,val int)*Node{
+func insertBack(head *Node, val int) *Node {
 
+	temp := head
 
-	temp:=head
-
-	for temp.Next!=nil{
-		temp=temp.Next
+	for temp.Next != nil {
+		temp = temp.Next
 	}
 
+	temp.Next = &Node{Data: val, Back: temp}
 
-
-	temp.Next=&Node{Data: val,Back: temp}
-
-
-	return  head
+	return head
 
 }
 
@@ -122,8 +117,8 @@ func DeleteK(head *Node, k int) *Node {
 			temp.Back.Next = temp.Next
 			temp.Next.Back = temp.Back
 
-			temp.Next=nil
-			temp.Back=nil
+			temp.Next = nil
+			temp.Back = nil
 			break
 		}
 
@@ -134,28 +129,27 @@ func DeleteK(head *Node, k int) *Node {
 
 }
 
-func insertAtK(head *Node , k int,val int) *Node{
+func insertAtK(head *Node, k int, val int) *Node {
 
-	var counter=0
+	var counter = 0
 
-	temp:=head
+	temp := head
 
-	for temp!=nil{
+	for temp != nil {
 		counter++
 
-		if counter==(k-1){
-			newNode:=&Node{Data: val,Next:temp.Next,Back:temp}
-			if temp.Next!=nil{ 
-			temp.Next.Back=newNode
+		if counter == (k - 1) {
+			newNode := &Node{Data: val, Next: temp.Next, Back: temp}
+			if temp.Next != nil {
+				temp.Next.Back = newNode
 			}
-			temp.Next=newNode
-			
+			temp.Next = newNode
+
 			break
 		}
 
-		temp=temp.Next
+		temp = temp.Next
 	}
-
 
 	return head
 
