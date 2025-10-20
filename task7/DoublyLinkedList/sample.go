@@ -38,7 +38,8 @@ func main() {
 
 	head=insertBack(head,6)
 
-	head=insertAtK(head, 3,7)
+	head=insertAtK(head, 7,7)
+	head=insertAtK(head, 6,5)
 
 	temp := head
 
@@ -144,7 +145,9 @@ func insertAtK(head *Node , k int,val int) *Node{
 
 		if counter==(k-1){
 			newNode:=&Node{Data: val,Next:temp.Next,Back:temp}
+			if temp.Next!=nil{ 
 			temp.Next.Back=newNode
+			}
 			temp.Next=newNode
 			
 			break
